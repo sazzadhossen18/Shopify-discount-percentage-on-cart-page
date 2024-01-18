@@ -1,0 +1,8 @@
+    {%- if item.variant.compare_at_price > item.original_price -%}
+      <s>{{ item.variant.compare_at_price | money }}</s>
+     {% endif %}                 
+      {{ item.original_price | money }}
+
+   <span class="discountpercentagecart">
+     Bespaar {{ item.variant.compare_at_price | minus: item.original_price | times: 100 | divided_by: item.variant.compare_at_price }}% 
+    </span>
